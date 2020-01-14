@@ -1,2 +1,2 @@
 # liteflownet-tf2
-LiteFlowNet inference realisation with tensorflow 2
+LiteFlowNet inference realization with tensorflow 2
