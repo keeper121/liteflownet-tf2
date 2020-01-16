@@ -1,10 +1,17 @@
 import numpy as np
 import tensorflow.compat.v1 as tf
 import torch
+import argparse
 
 from model import LiteFlowNet
 
 tf.disable_eager_execution()
+
+parser = argparse.ArgumentParser()
+parser.add_argument('--input_model', default='network-default.pytorch')
+parser.add_argument('--output_model', default='model')
+
+args = parser.parse_args()
 
 
 def ToTensor(sample, transfrm=lambda x: np.transpose(x, [0, 3, 1, 2])):
