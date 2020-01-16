@@ -1,7 +1,7 @@
 # liteflownet-tf2
 LiteFlowNet inference realization with TensorFlow 2.
 
-Inspired by pytorch reimplenetation: https://github.com/sniklaus/pytorch-liteflownet\
+Inspired by pytorch reimplenetation: https://github.com/sniklaus/pytorch-liteflownet
 
 This is my reimplementation of LiteFlowNet [1] using Tensorflow 2.0 with build-in correlation layer. 
 There are some messy code with using of tf2 package and it compatibility mode with tf 1.x.
