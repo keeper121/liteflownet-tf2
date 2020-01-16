@@ -44,8 +44,6 @@ python eval.py --img1=./images/first.png --img2=./images/second.png --flow=./out
 Results differ a little. I think it depends on a bit different feature warping then in original work.
 <p align="center"><img src="images/compare.gif?raw=true" alt="Comparison"></p>
 
-As stated in the <a href="https://github.com/twhui/LiteFlowNet#license-and-citation">licensing terms</a> of the authors of the paper, their material is provided for research purposes only. Please make sure to further consult their licensing terms.
-
 ## References
 ```
 [1]  @inproceedings{Hui_CVPR_2018,
