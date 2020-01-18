@@ -32,13 +32,13 @@ wget --timestamping http://content.sniklaus.com/github/pytorch-liteflownet/netwo
 wget --timestamping http://content.sniklaus.com/github/pytorch-liteflownet/network-sintel.pytorch
 
 # convert default model
-python convert_pytorch2tf.py --input_model=./network-default.pytorch --output_model=./tfmodel.ckpt
+python convert_pytorch2tf.py --input_model=./network-default.pytorch --output_model=./model
 ```
 ## How to run
 To run it on your own pair of images, use the following command.
 
 ```
-python eval.py --img1=./images/first.png --img2=./images/second.png --flow=./out.flow --display_flow=True```
+python eval.py --img1=./images/first.png --img2=./images/second.png --flow=./out.flow --display_flow=True
 ```
 Results differ a little. I think it depends on a bit different feature warping then in original work.
 <p align="center"><img src="images/compare.gif?raw=true" alt="Comparison"></p>
