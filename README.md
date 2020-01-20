@@ -22,8 +22,7 @@ Weights could be converted from PyTorch version [2] via script convert_pytorch2t
 
 I converted only default model. You can convert it as youself. Or you can download already converted model.
 
-##### Convert weights from pytorch version:
-https://github.com/sniklaus/pytorch-liteflownet
+#### Convert weights from pytorch version:
 ```
 # download model
 wget http://content.sniklaus.com/github/pytorch-liteflownet/network-default.pytorch
@@ -32,10 +31,8 @@ wget http://content.sniklaus.com/github/pytorch-liteflownet/network-default.pyto
 python convert_pytorch2tf.py --input_model=./network-default.pytorch --output_model=./model
 ```
 
-##### Convert weights from caffe version:
-https://github.com/twhui/LiteFlowNet
+#### Convert weights from caffe version:
 ```
-
 # download and unzip model
 wget https://github.com/twhui/LiteFlowNet/raw/master/models/trained/liteflownet.tar.gz
 tar -xvzf liteflownet.tar.gz
