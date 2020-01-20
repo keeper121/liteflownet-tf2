@@ -18,22 +18,35 @@ pip install --user tensorflow==2.0.0
 pip install --user tensorflow_addons==0.6.0
 ```
 
-These weights converted from PyTorch version [2] via script convert_pytorch2tf.py
+Weights could be converted from PyTorch version [2] via script convert_pytorch2tf.py and directly from Caffe version [1].
 
-I convert only default model. You can convert it as youself. Or you can download already converted model from the link: \
-https://drive.google.com/open?id=1apeRotQKMsFji8MKKNzcx-QO4udkJcdJ.
+I converted only default model. You can convert it as youself. Or you can download already converted model.
 
+##### Convert weights from pytorch version:
+https://github.com/sniklaus/pytorch-liteflownet
 ```
-cd liteflownet-tf2
-
-# download any of that models
-wget --timestamping http://content.sniklaus.com/github/pytorch-liteflownet/network-default.pytorch
-wget --timestamping http://content.sniklaus.com/github/pytorch-liteflownet/network-kitti.pytorch
-wget --timestamping http://content.sniklaus.com/github/pytorch-liteflownet/network-sintel.pytorch
+# download model
+wget http://content.sniklaus.com/github/pytorch-liteflownet/network-default.pytorch
 
 # convert default model
 python convert_pytorch2tf.py --input_model=./network-default.pytorch --output_model=./model
 ```
+
+##### Convert weights from caffe version:
+https://github.com/twhui/LiteFlowNet
+```
+
+# download and unzip model
+wget https://github.com/twhui/LiteFlowNet/raw/master/models/trained/liteflownet.tar.gz
+tar -xvzf liteflownet.tar.gz
+
+# convert default model
+python convert_caffe2tf.py --input_model=./liteflownet.caffemodel --output_model=./model
+```
+
+##### Get converted weights to tf2
+You can download already converted model from the link: 
+https://drive.google.com/open?id=1apeRotQKMsFji8MKKNzcx-QO4udkJcdJ.
 ## How to run
 To run it on your own pair of images, use the following command.
 
@@ -42,6 +55,10 @@ python eval.py --img1=./images/first.png --img2=./images/second.png --flow=./out
 ```
 Results differ a little. I think it depends on a bit different feature warping then in original work.
 <p align="center"><img src="images/compare.gif?raw=true" alt="Comparison"></p>
+
+## License
+Original materials is provided for research purposes only. 
+Please see https://github.com/twhui/LiteFlowNet#license-and-citation to more information.
 
 ## References
 ```
