@@ -41,7 +41,7 @@ tar -xvzf liteflownet.tar.gz
 python convert_caffe2tf.py --input_model=./liteflownet.caffemodel --output_model=./model
 ```
 
-##### Get converted weights to tf2
+#### Get converted weights to tf2
 You can download already converted model from the link: 
 https://drive.google.com/open?id=1apeRotQKMsFji8MKKNzcx-QO4udkJcdJ.
 ## How to run
