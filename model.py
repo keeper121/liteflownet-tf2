@@ -47,7 +47,7 @@ class LiteFlowNet():
 
     def group_upconv(self, in1, groups, name):
         # keras don't have an easy way of group conv so use old way
-        with tf.compat.v1.variable_scope('colornet'):
+        with tf.compat.v1.variable_scope('flownet'):
             with tf.compat.v1.variable_scope(name):
                 filterc = tf.compat.v1.get_variable('filter_w', shape=[4, 4, 1, groups], dtype=tf.float32)
                 shp = tf.shape(in1)
@@ -222,7 +222,7 @@ class LiteFlowNet():
 
         return conv2
 
-    def __call__(self, tensor1, tensor2, scope='colornet'):
+    def __call__(self, tensor1, tensor2, scope='flownet'):
         tf.keras.backend.set_floatx('float32')
         with tf.name_scope(scope):
             tensor1_norm = tensor1 - [[[[0.411618, 0.434631, 0.454253]]]]
