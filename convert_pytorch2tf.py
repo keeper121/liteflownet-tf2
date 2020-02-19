@@ -41,13 +41,13 @@ weights_mapping = {
     'moduleFeatures.moduleSix.0.bias': 'flownet/feature_extractor/sequential_5/conv2d_9/bias',
 }
 
-pytorch_model_path = '/media/keeper121/NewVolume/pytorch-liteflownet/network-default.pytorch'
+pytorch_model_path = args.input_model
 pytorch_state_dict = torch.load(pytorch_model_path)
 
 model = LiteFlowNet()
-mono = tf.placeholder(tf.float32, shape=[None, None, None, 3])
-color = tf.placeholder(tf.float32, shape=[None, None, None, 3])
-out = model(mono, color)
+frame1 = tf.placeholder(tf.float32, shape=[None, None, None, 3])
+frame2 = tf.placeholder(tf.float32, shape=[None, None, None, 3])
+out = model(frame1, frame2)
 
 c = 10
 m_weights = {}
@@ -165,4 +165,4 @@ for state in pytorch_state_dict:
 
 # save model
 saver = tf.train.Saver(tfvars)
-saver.save(sess, './model')
+saver.save(sess, args.output_model)
