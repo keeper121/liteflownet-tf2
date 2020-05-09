@@ -17,7 +17,7 @@ args = parser.parse_args()
 
 caffe_weights = {}
 
-with open(args.input_model, 'r') as fp:
+with open(args.input_model, 'rb') as fp:
     net = NetParameter()
     net.ParseFromString(fp.read())
     #text_format.Merge(fp.read(), net)
